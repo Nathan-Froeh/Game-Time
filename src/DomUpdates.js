@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import anime from 'animejs'
 
 var correctBuzzer = document.createElement('audio');
 correctBuzzer.setAttribute('src',
@@ -100,7 +101,16 @@ const DomUpdates = {
   resetScoreBox() {
     $('#score-box__player-1-score').text('0')
     $('#score-box__player-2-score').text('0')
-  }
+  },
+
+  changeBackground() {
+    anime({
+      targets: 'h1',
+      rotate: '720',
+      scale: '2',
+      duration: '6000'
+    })
+  } 
 }
 
 export default DomUpdates;

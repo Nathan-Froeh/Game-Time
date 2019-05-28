@@ -7,7 +7,6 @@ import Round from '../src/Round'
 import FastMoney from '../src/FastMoney'
 
 
-
 describe('FastMoney', function() {
   let game, survey, round, fastMoney, turn;
   beforeEach(() => {
@@ -28,7 +27,6 @@ describe('FastMoney', function() {
   });
 
   it('should evaluate the user\'s guesses and compare with the correct answers', function() {
-    turn.updateAnswers();
     fastMoney.evaluateGuesses('Donuts', turn);
     expect(fastMoney.player1Guesses.length).to.eql(1);
 

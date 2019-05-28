@@ -28,20 +28,14 @@ describe('Turn', function() {
   })
   
   it('should have a method that evaluates a players guess', function() {
-    turn.evaluateGuess('bowling ball')
-    expect(turn.currentGuess).to.deep.equal({ answer: 'Bowling Ball', respondents: 5})
-    turn.evaluateGuess('beer')
-    expect(turn.currentGuess).to.deep.equal({ answer: 'Beer', respondents: 67})
-    turn.evaluateGuess('ryan')
-    expect(turn.currentGuess).to.equal(undefined)
+    expect(turn.evaluateGuess('bowling ball')).to.equal('Bowling Ball')
+    expect(turn.evaluateGuess('beer')).to.equal('Beer')
+    expect(turn.evaluateGuess('ryan')).to.equal(undefined)
   })
 
-  it('should not be able to guess a correct answer already guessed', function() {
-    turn.evaluateGuess('beer')
-    turn.updateAnswers()
-    expect(round.answers.length).to.equal(2)
-    turn.evaluateGuess('ryan')
-    turn.updateAnswers()
-    expect(round.answers.length).to.equal(2)
+  it('should have a function that decriments second by one', function() {
+    expect(turn.second).to.equal(30)
+    turn.subtractSecond()
+    expect(turn.second).to.equal(29)
   })
 })

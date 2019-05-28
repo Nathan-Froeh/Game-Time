@@ -26,16 +26,12 @@ describe('Round', function() {
     expect(round.question).to.equal('If You Drew Homer Simpson’s Name In A Secret Santa Exchange, What Would You Buy Him?')
   })
 
-  it('should be able to take in a survey and store the answers as an array of objects', function() {
-    expect(round.answers).to.deep.equal([{ answer: 'Beer', respondents: 67}, { answer: 'Bowling Ball', respondents: 5}, { answer: 'Donuts', respondents: 24}])
-  })
-
   it('should have a method to toggle between two numbers', function() {
-    expect(round.togglePlayer()).to.equal(0)
-    round.turnNumber++
     expect(round.togglePlayer()).to.equal(1)
     round.turnNumber++
     expect(round.togglePlayer()).to.equal(0)
+    round.turnNumber++
+    expect(round.togglePlayer()).to.equal(1)
   })
 
   it('should create a new turn and toggle between two players', function() {
@@ -48,7 +44,7 @@ describe('Round', function() {
   })
 
   it('should remove a correct guess from the answer array', function() {
-    round.removeAnswer('beer')
+    round.removeAnswer('beer', game.player1)
     expect(round.answers.length).to.equal(2)
   })
 });
