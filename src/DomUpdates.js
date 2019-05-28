@@ -6,6 +6,7 @@ correctBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-clang.wav')
 var wrongBuzzer = document.createElement('audio');
 wrongBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-strike.wav');
 
+
 const DomUpdates = {
   removeFlipClass() {
     $('#answer__one').parent().parent().removeClass('flipped')
@@ -125,8 +126,17 @@ const DomUpdates = {
   resetScoreBox() {
     $('#score-box__player-1-score').text('0')
     $('#score-box__player-2-score').text('0')
+  },
+
+  displayResults(player1score, player2score) {
+    $('#player__1__results_display').append('<h2><span id=\"player__1__results_placeholder\"></span></h2>')
+    $('#player__2__results_display').append('<h2><span id=\"player__2__results_placeholder\"></span></h2>')
+    $('#player__1__results_placeholder').text(player1score)
+    $('#player__2__results_placeholder').text(player2score)
+    $('#center-section__multiplier-form').removeClass('hidden')
   }
 
 }
+
 
 export default DomUpdates;
