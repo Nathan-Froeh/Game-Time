@@ -1,7 +1,8 @@
 import $ from 'jquery'
 
 var correctBuzzer = document.createElement('audio');
-correctBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-clang.wav');
+correctBuzzer.setAttribute('src',
+  'http://www.qwizx.com/gssfx/usa/ff-clang.wav');
 
 var wrongBuzzer = document.createElement('audio');
 wrongBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-strike.wav');

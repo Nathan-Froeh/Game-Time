@@ -1,4 +1,3 @@
-import { userInfo } from "os";
 import Player from "./Player";
 import SurveyRepo from './SurveyRepo.js';
 import Round from './Round.js';
