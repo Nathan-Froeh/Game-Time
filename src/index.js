@@ -8,6 +8,7 @@ import DomUpdates from './DomUpdates'
 import Game from '../src/Game.js';
 import SurveyRepo from './SurveyRepo';
 import Round from './Round'
+import FastMoney from './FastMoney';
 
 let game, round, survey, turn;
 
@@ -34,7 +35,7 @@ $('.answer-card').on('click', function() {
 })
 
 $('#submit-form__submit-btn').on('click', function() {
-  DomUpdates.checkCardFlip()
+  game.round < 3 ? DomUpdates.checkCardFlip() : null;
   if (game.round > 2) {
     fastMoneyTurn()
   } else {

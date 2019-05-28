@@ -15,7 +15,6 @@ class FastMoney extends Round {
         this.player2Guesses.push(guess)
       }
     });
-					
   }
 
   evaluateScore(guesses) {
