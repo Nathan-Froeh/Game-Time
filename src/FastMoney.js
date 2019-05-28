@@ -1,11 +1,12 @@
 import Round from './Round';
 
 class FastMoney extends Round {
-  constructor(survey, game) {
-    super(survey, game)
-    this.player1Guesses = [];
-    this.player2Guesses = [];
-  }
+
+	constructor(survey, game) {
+		super(survey, game)
+		this.player1Guesses = [];
+		this.player2Guesses = [];
+	}
 
   evaluateGuesses(guess, turn) {
     this.answers.filter(answer => {
@@ -30,8 +31,10 @@ class FastMoney extends Round {
     let score2 = round.evaluateScore([... new Set(this.player1Guesses)])
     game.player1.score += (game.player1.multiplier * score1)
     game.player2.score += (game.player2.multiplier * score2)
+    console.log(game.player1.score)
   }
 } 
+
 
 export default FastMoney;
 

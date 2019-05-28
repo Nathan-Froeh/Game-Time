@@ -123,6 +123,42 @@ function makeBlankTurn() {
   runTimer()
 }
 
+function playerNames(name1, name2) {
+  $('#score-box__player-1').text(name1)
+  $('#score-box__player-2').text(name2)
+}
+
+
+$('.answer-card').on('click', function() {
+  $(this).addClass('flipped')
+})
+
+
+$('#submit-form__submit-btn').on('click', function() {
+  checkCardFlip()
+  if(game.round > 2) {
+  	makeBlankTurn()
+  } else {
+  startTurn()
+  }
+  $('#submit-form__answer-input').val('');
+  checkRoundHighlight()
+})
+
+
+$('#score-section__timer').on('DOMSubtreeModified', function() {
+  if ($('#timer').text() === '0') {
+    turn.resetTimer()
+    startTurn()
+  }
+})
+
+
+function displayTimer() {
+  $('#timer').text(turn.second)
+  $('#timer-2').text(turn.second)
+}
+
 function runTimer() {
   let counter;
   counter = setInterval(() => DomUpdates.displayTimer(turn), 1000)
@@ -138,6 +174,24 @@ function startTurn () {
   DomUpdates.updatePlayerScore(game)
 }
 
+function hideTimer(index) {
+  if (index === 1) {
+    $('.timer-1').parent().removeClass('hidden')
+    $('.timer-2').parent().addClass('hidden')
+  } else {
+    $('.timer-2').parent().removeClass('hidden')
+    $('.timer-1').parent().addClass('hidden')
+  }
+}
+
+
+function updatePlayerScore() {
+  $('#score-box__player-1-score').text(game.player1.score)
+  $('#score-box__player-2-score').text(game.player2.score)
+}
+
+
+
 function changeRound() {
   if ((round.answers.length === 0) && (game.round < 2)) {
     createSurveys()
@@ -152,7 +206,32 @@ function fastMoneyRound() {
   round = game.createFastMoney(survey.questionAndAnswers, game)
   console.log(round.answers)
   DomUpdates.displayRound(round)
+  DomUpdates.displayMultiplier()
   makeBlankTurn()
+}
+
+$('#right-section__change-round-btn').on('click', function() {
+  changeRound()
+})
+
+$('#left-section__quit-btn').on('click', function() {
+  location.reload()
+})
+
+function removeFlipClass() {
+  $('#answer__one').parent().parent().removeClass('flipped')
+  $('#answer__two').parent().parent().removeClass('flipped')
+  $('#answer__three').parent().parent().removeClass('flipped')
+  changeRound()
+}
+
+
+function checkRoundHighlight() {
+  if (round.answers.length === 0) {
+    $('.p1__box').removeClass('current-player')
+    $('.p2__box').removeClass('current-player')
+    $('#right-section__change-round-btn').addClass('current-player')
+  }
 }
 
 function fastMoneyTurn() {
@@ -161,6 +240,7 @@ function fastMoneyTurn() {
   let guess = turn.evaluateGuess($('#submit-form__answer-input').val())
   round.evaluateGuesses(guess, turn)
   DomUpdates.hilightPlayer(turn)
+  
 }
 
 function createSurveys() {
@@ -168,4 +248,3 @@ function createSurveys() {
   survey.findCurrentSurveyById()
   DomUpdates.removeFlipClass()
 }
-

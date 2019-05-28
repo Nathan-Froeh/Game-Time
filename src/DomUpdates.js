@@ -98,6 +98,26 @@ const DomUpdates = {
     $('#timer-2').text(turn.second)
   },
 
+
+  displayMultiplier() {
+    $('#center-section__multiplier-form').removeClass('slideUp')
+  },
+
+  activateMultiplierButton() {
+    $('#center-section__multiplier-form').on('click', function() {
+      $(this).addClass('active')
+    })
+  },
+
+
+  assignMultiplier() {
+    $('#center-section__multiplier-form').on('click', function() {
+      if($(this).hasClass('active')) {
+        turn.player.multiplier = $(this).text()
+      }
+    })
+  },
+
   resetScoreBox() {
     $('#score-box__player-1-score').text('0')
     $('#score-box__player-2-score').text('0')
@@ -111,6 +131,7 @@ const DomUpdates = {
       duration: '6000'
     })
   } 
+
 }
 
 export default DomUpdates;

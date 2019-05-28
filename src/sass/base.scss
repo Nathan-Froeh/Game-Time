@@ -267,6 +267,10 @@ main {
   
 }
 
+.active {
+  border: solid 5px red;
+}
+
 /*--------------- highlight current player -------------*/
 
 .current-player:before, .current-player:after {
@@ -298,6 +302,7 @@ main {
 .current-player:after {
 	filter: blur(10px);
 }
+
 
 /*-------------wrong answer X-------------*/
 
