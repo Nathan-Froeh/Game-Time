@@ -34,7 +34,7 @@ class FastMoney extends Round {
     let score2 = round.evaluateScore([... new Set(this.player2Guesses)])
     game.player1.score += (game.player1.multiplier * score1)
     game.player2.score += (game.player2.multiplier * score2)
-    console.log(game.player1.score)
+  
   }
 } 
 

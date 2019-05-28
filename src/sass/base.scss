@@ -120,7 +120,7 @@ button:hover {
 #left-section__restart-btn,
 #left-section__quit-btn,
 #right-section__change-round-btn {
-  width: 100%;
+  width: 80%;
   margin-top: 20px;
   font-size: 24px;
 }
@@ -313,4 +313,25 @@ main {
   margin-right: auto;
   z-index: 100;
 }
+
+
+/*-----------Splash Results--------------*/
+
+.splash__page {
+  @include display-flex(flex, center, center, null);
+  @include dimension(100%, 100%);
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 2;
+}
+
+.splash__box {
+  @include dimension(400px, 400px);
+  @include display-flex(flex, center, null, wrap);
+  border: $splash-border-color 5px outset;
+  background: radial-gradient(circle, rgba(151,3,6,1) 45%, rgba(220,13,12,1) 90%);
+  margin: auto;
+  border-radius: 5px;
+}
+
 

@@ -97,7 +97,7 @@ const DomUpdates = {
   },
 
   displayMultiplier() {
-    $('#center-section__multiplier-form').removeClass('slideUp')
+    $('#center-section__multiplier-form').removeClass('slideUp').slideDown()
   },
 
   activateMultiplierButton() {
