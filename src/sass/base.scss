@@ -232,12 +232,6 @@ main {
   display: inline-block;
   margin-top: 10px;
   padding: 10px;
-<<<<<<< HEAD
-  height: 40px;
-
-
-=======
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88
 }
 
 #submit-form__submit-btn {
@@ -267,6 +261,10 @@ main {
   transform: translateY(0px);
   z-index: 0;
   
+}
+
+.active {
+  border: solid 5px red;
 }
 
 /*--------------- highlight current player -------------*/
@@ -301,10 +299,7 @@ main {
 	filter: blur(10px);
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88
 /*-------------wrong answer X-------------*/
 
 #red-x {
@@ -318,7 +313,4 @@ main {
   margin-right: auto;
   z-index: 100;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88

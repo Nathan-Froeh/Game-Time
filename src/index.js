@@ -116,16 +116,10 @@ function makeBlankTurn() {
   runTimer()
 }
 
-<<<<<<< HEAD
 function playerNames(name1, name2) {
   $('#score-box__player-1').text(name1)
   $('#score-box__player-2').text(name2)
 }
-
-
-$('.answer-card').on('click', function() {
-  $(this).addClass('flipped')
-})
 
 
 $('.answer-card').on('click', function() {
@@ -144,34 +138,6 @@ $('#submit-form__submit-btn').on('click', function() {
   checkRoundHighlight()
 })
 
-function wrongAnswer() {
-  $('h1').prepend("<div id=\"red-x\">X</div>")
-  setTimeout(function() {
-    $('#red-x').remove()
-  }, 2000);
-  wrongBuzzer.play();
-}
-
-
-function checkCardFlip() {
-  round.answers.find
-  if ($('#submit-form__answer-input').val().toLowerCase() === 
-  $('#answer__one').text().toLowerCase()) {
-    $('#answer__one').parent().parent().addClass('flipped')
-  	correctBuzzer.play();
-  } else if ($('#submit-form__answer-input').val().toLowerCase() === 
-  $('#answer__two').text().toLowerCase()) {
-    $('#answer__two').parent().parent().addClass('flipped')
-    correctBuzzer.play();
-  } else if ($('#submit-form__answer-input').val().toLowerCase() === 
-  $('#answer__three').text().toLowerCase()) {
-    $('#answer__three').parent().parent().addClass('flipped')
-    correctBuzzer.play();
-  } else {
-  wrongAnswer()
-}
-
-}
 
 $('#score-section__timer').on('DOMSubtreeModified', function() {
   if ($('#timer').text() === '0') {
@@ -186,8 +152,6 @@ function displayTimer() {
   $('#timer-2').text(turn.second)
 }
 
-=======
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88
 function runTimer() {
   let counter;
   counter = setInterval(() => DomUpdates.displayTimer(turn), 1000)
@@ -203,7 +167,6 @@ function startTurn () {
   DomUpdates.updatePlayerScore(game)
 }
 
-<<<<<<< HEAD
 function hideTimer(index) {
   if (index === 1) {
     $('.timer-1').parent().removeClass('hidden')
@@ -221,8 +184,7 @@ function updatePlayerScore() {
 }
 
 
-=======
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88
+
 function changeRound() {
   if ((round.answers.length === 0) && (game.round < 2)) {
     createSurveys()
@@ -237,10 +199,10 @@ function fastMoneyRound() {
   round = game.createFastMoney(survey.questionAndAnswers, game)
   console.log(round.answers)
   DomUpdates.displayRound(round)
+  DomUpdates.displayMultiplier()
   makeBlankTurn()
 }
 
-<<<<<<< HEAD
 $('#right-section__change-round-btn').on('click', function() {
   changeRound()
 })
@@ -265,13 +227,13 @@ function checkRoundHighlight() {
   }
 }
 
-=======
 function fastMoneyTurn() {
   event.preventDefault()
   let turn = round.createBlankturn()
   let guess = turn.evaluateGuess($('#submit-form__answer-input').val())
   round.evaluateGuesses(guess, turn)
   DomUpdates.hilightPlayer(turn)
+  
 }
 
 function createSurveys() {
@@ -279,5 +241,3 @@ function createSurveys() {
   survey.findCurrentSurveyById()
   DomUpdates.removeFlipClass()
 }
-
->>>>>>> 8d3ee7d4b4a4589b1443f0043cc645e955ec3e88

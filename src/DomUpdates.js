@@ -94,7 +94,27 @@ const DomUpdates = {
   displayTimer(turn) {
     $('#timer').text(turn.second)
     $('#timer-2').text(turn.second)
+  },
+
+  displayMultiplier() {
+    $('#center-section__multiplier-form').removeClass('slideUp')
+  },
+
+  activateMultiplierButton() {
+    $('#center-section__multiplier-form').on('click', function() {
+      $(this).addClass('active')
+    })
+  },
+
+
+  assignMultiplier() {
+    $('#center-section__multiplier-form').on('click', function() {
+      if($(this).hasClass('active')) {
+        turn.player.multiplier = $(this).text()
+      }
+    })
   }
+
 }
 
 export default DomUpdates;
