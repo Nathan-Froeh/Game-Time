@@ -22,7 +22,6 @@ class Turn {
   }
 
   stopTimer() {
-    this.second = 30
     clearInterval(this.counter)
   }
 

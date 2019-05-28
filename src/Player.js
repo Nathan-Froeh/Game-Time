@@ -4,6 +4,7 @@ class Player {
     this.name = name;
     this.score = 0;
     this.scores = [];
+    this.multiplier = 1;
   }
 
   playerName() {
