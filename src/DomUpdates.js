@@ -113,6 +113,12 @@ const DomUpdates = {
         turn.player.multiplier = $(this).text()
       }
     })
+  },
+
+  hideMuliplier() {
+    $('#center-section__multiplier-form').on('click', function() {
+      $(this).addClass('slideUp')
+    })
   }
 
 }
