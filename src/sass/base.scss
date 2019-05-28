@@ -74,7 +74,7 @@ h1 {
   @include dimension(100%, 100%);
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
-  z-index: 2;
+  z-index: 4;
 }
 
 .splash__box {
@@ -317,7 +317,7 @@ main {
 
 /*-----------Splash Results--------------*/
 
-.splash__page {
+.splash__results__page {
   @include display-flex(flex, center, center, null);
   @include dimension(100%, 100%);
   background: rgba(0, 0, 0, 0.8);
@@ -343,6 +343,19 @@ main {
     text-align: center;
     text-shadow: none;
   }
+}
+
+.push-to-back {
+  display: none;
+}
+
+#player__1__results_placeholder,
+#player__2__results_placeholder,
+#winner__results_placeholder {
+  color: #ffffff;
+  font-size: 24px;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+  
 }
 
 

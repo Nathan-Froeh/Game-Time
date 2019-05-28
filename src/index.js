@@ -66,6 +66,7 @@ $('#score-section__timer').on('DOMSubtreeModified', function() {
     clearInterval(turn.counter)
     round.multiplyScore(round, game)
     DomUpdates.updatePlayerScore(game)
+    DomUpdates.findWinner(game.player1.score, game.player2.score, game.player1.name, game.player2.name)
     DomUpdates.displayResults(game.player1.score, game.player2.score)
     console.log('game over')
     $('#score-section__timer').remove()
