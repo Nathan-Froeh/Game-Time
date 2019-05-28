@@ -26,7 +26,7 @@ describe('Round', function() {
     expect(round.question).to.equal('If You Drew Homer Simpson’s Name In A Secret Santa Exchange, What Would You Buy Him?')
   })
 
-  it('should be able to take in a survey and store the answers as an array of objects' ,function() {
+  it('should be able to take in a survey and store the answers as an array of objects', function() {
     expect(round.answers).to.deep.equal([{ answer: 'Beer', respondents: 67}, { answer: 'Bowling Ball', respondents: 5}, { answer: 'Donuts', respondents: 24}])
   })
 

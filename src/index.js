@@ -31,6 +31,9 @@ $('#start__game__btn').on('click', () => {
   game = new Game($('#player__1').val(), $('#player__2').val())
   hideTimer(1)
   fetchData()
+  turn = round.createBlankturn()
+  turn.updateTimer()
+  runTimer()
 })
 
 function fetchData() {
@@ -85,6 +88,11 @@ $('.answer-card').on('click', function() {
 })
 
 
+$('.answer-card').on('click', function() {
+  $(this).addClass('flipped')
+})
+
+
 $('#submit-form__submit-btn').on('click', function() {
   checkCardFlip()
   if(game.round > 2) {
@@ -93,9 +101,7 @@ $('#submit-form__submit-btn').on('click', function() {
   startTurn()
   }
   $('#submit-form__answer-input').val('');
-  // checkRoundHighlight()
-  console.log(game.round)
-  console.log(round.answers)
+  checkRoundHighlight()
 })
 
 function wrongAnswer() {
@@ -105,14 +111,6 @@ function wrongAnswer() {
   }, 2000);
   wrongBuzzer.play();
 }
-
-// function checkMultiplier() {
-// 	if($('#multiplier-form__input').val().includes((1, 3, 5))) {
-// 		fastMoney.multiplier = $('#multiplier-form__input').val();
-// 	} else {
-// 		alert('Multiplier can only have a value of 1, 3, or 5! Please enter a valid number.')		
-// 	}
-// }
 
 
 function checkCardFlip() {
@@ -220,11 +218,11 @@ function fastMoneyRound() {
   makeBlankTurn()
 }
 
-$('#right-section__change-round').on('click', function() {
+$('#right-section__change-round-btn').on('click', function() {
   changeRound()
 })
 
-$('#left-section__quit-game').on('click', function() {
+$('#left-section__quit-btn').on('click', function() {
   location.reload()
 })
 
@@ -235,11 +233,12 @@ function removeFlipClass() {
   changeRound()
 }
 
-// function checkRoundHighlight() {
-//   if (round.answers.length === 0) {
-//     $('.p1__box').removeClass('current-player')
-//     $('.p2__box').removeClass('current-player')
-//     $('.change-round').addClass('current-player')
-//   }
-// }
+
+function checkRoundHighlight() {
+  if (round.answers.length === 0) {
+    $('.p1__box').removeClass('current-player')
+    $('.p2__box').removeClass('current-player')
+    $('#right-section__change-round-btn').addClass('current-player')
+  }
+}
 

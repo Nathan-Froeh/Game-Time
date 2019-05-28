@@ -36,8 +36,7 @@ h1 {
   @include dimension(null, max-content);
   color: $text-color;
   font-size: 3em;
-  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
-  width: max-content;
+  // text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
 }
 
 .header__score-section {
@@ -126,6 +125,10 @@ button:hover {
   font-size: 24px;
 }
 
+#right-section__change-round-btn {
+  position: relative;
+}
+
 /*-----------Main--------------*/
 
 main {
@@ -144,16 +147,14 @@ main {
 .main__center-section {
   @include display-flex(flex, flex-start, center, null);
   flex-direction: column;
-  flex: 8;
-  justify-content: flex-start;
+  flex: 6;
+  padding-bottom: 5%;
 }
 
 .main__right-section {
   flex: 1;
-  display: flex;
+  @include display-flex(flex, center, center, null);
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 #center-section__submit-form {
@@ -165,8 +166,6 @@ main {
 /*------------ScoreBoard----------*/
 
 #surveys {
-  align-items: center;
-  background-color: #000;
   @include display-flex(flex, space-around, center, null);
   @include dimension(350px, 750px);
   background-image: url("https://cdn.pixabay.com/photo/2017/08/05/15/53/gold-2584457_960_720.jpg");
@@ -235,6 +234,7 @@ main {
   padding: 10px;
   height: 40px;
 
+
 }
 
 #submit-form__submit-btn {
@@ -298,6 +298,7 @@ main {
 	filter: blur(10px);
 }
 
+
 /*-------------wrong answer X-------------*/
 
 #red-x {
@@ -311,4 +312,3 @@ main {
   margin-right: auto;
   z-index: 100;
 }
-

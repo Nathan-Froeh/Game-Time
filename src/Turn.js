@@ -21,6 +21,11 @@ class Turn {
     this.updateTimer()
   }
 
+  stopTimer() {
+    this.second = 30
+    clearInterval(this.counter)
+  }
+
   evaluateGuess(guess) {
     return this.round.answers.find(item => {
       return item.toUpperCase() === guess.toUpperCase()
