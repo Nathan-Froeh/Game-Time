@@ -53,6 +53,14 @@ $('#left-section__quit-btn').on('click', function() {
   location.reload()
 })
 
+$('#left-section__restart-btn').on('click', function() {
+  game = new Game($('#player__1').val(), $('#player__2').val())
+  DomUpdates.hideTimer(1)
+  fetchData()
+  DomUpdates.removeFlipClass()
+  DomUpdates.resetScoreBox()
+})
+
 $('#score-section__timer').on('DOMSubtreeModified', function() {
   if (game.round === 3 && round.turnNumber === 3) {
     clearInterval(turn.counter)
