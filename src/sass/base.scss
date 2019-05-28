@@ -321,6 +321,7 @@ main {
   @include display-flex(flex, center, center, null);
   @include dimension(100%, 100%);
   background: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
   position: absolute;
   z-index: 2;
 }
