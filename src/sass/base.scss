@@ -321,18 +321,28 @@ main {
   @include display-flex(flex, center, center, null);
   @include dimension(100%, 100%);
   background: rgba(0, 0, 0, 0.8);
-  flex-direction: column;
   position: absolute;
   z-index: 2;
 }
 
-.splash__box {
+.splash__results_box{
   @include dimension(400px, 400px);
-  @include display-flex(flex, center, null, wrap);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   border: $splash-border-color 5px outset;
   background: radial-gradient(circle, rgba(151,3,6,1) 45%, rgba(220,13,12,1) 90%);
   margin: auto;
   border-radius: 5px;
+
+  h1 {
+    align-self: center;
+  }
+
+  h2 {
+    text-align: center;
+    text-shadow: none;
+  }
 }
 
 

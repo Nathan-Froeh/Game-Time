@@ -43,8 +43,4 @@ describe.only('FastMoney', function() {
 		expect(fastMoney.evaluateScore(fastMoney.player1Guesses)).to.equal(91)
 	});
 
-	it.skip('should have a method to apply the user\'s multiplier to the total score', function() {
-		fastMoney.multiplyScore(fastMoney.player1Guesses);
-		expect(fastMoney.currentGame.player1.score).to.equal(3)
-	})
 })
