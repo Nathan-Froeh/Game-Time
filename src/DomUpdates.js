@@ -119,6 +119,12 @@ const DomUpdates = {
     $('#center-section__multiplier-form').on('click', function() {
       $(this).addClass('slideUp')
     })
+
+  },
+
+  resetScoreBox() {
+    $('#score-box__player-1-score').text('0')
+    $('#score-box__player-2-score').text('0')
   }
 
 }
