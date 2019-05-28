@@ -1,5 +1,4 @@
 import Turn from "./Turn";
-import Game from './Game'
 
 class Round {
   constructor(survey, game) {
@@ -17,7 +16,8 @@ class Round {
 
   createTurn() {
     this.turnNumber++
-    this.currentTurn = new Turn(this.currentGame.players[this.togglePlayer()], this)
+    this.currentTurn = new Turn(this.currentGame.players[this.togglePlayer()],
+      this)
     return this.currentTurn
   }
 

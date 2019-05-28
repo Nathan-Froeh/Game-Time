@@ -1,6 +1,4 @@
 import Round from './Round';
-import Turn from './Turn';
-import Game from './Game';
 
 class FastMoney extends Round {
 
@@ -18,7 +16,6 @@ class FastMoney extends Round {
         this.player2Guesses.push(guess)
       }
     });
-
   }
 
   evaluateScore(guesses) {
@@ -30,8 +27,8 @@ class FastMoney extends Round {
   }
 	
   multiplyScore(round, game) {
-    let score1 = round.evaluateScore([... new Set(this.player1Guesses)])
-    let score2 = round.evaluateScore([... new Set(this.player2Guesses)])
+    let score1 = round.evaluateScore([... new Set(this.player2Guesses)])
+    let score2 = round.evaluateScore([... new Set(this.player1Guesses)])
     game.player1.score += (game.player1.multiplier * score1)
     game.player2.score += (game.player2.multiplier * score2)
     console.log(game.player1.score)

@@ -46,8 +46,8 @@
     </header>
     <main>
       <section class="main__left-section">
-        <button id="left-section__restart-btn">Restart Game</button>
-        <button id="left-section__quit-btn">Quit Game</button>
+        <button class='game-btns' id="left-section__restart-btn">Restart Game</button>
+        <button class='game-btns' id="left-section__quit-btn">Quit Game</button>
       </section>
       <section class="main__center-section">
         <figure id="question"></figure>
@@ -74,7 +74,7 @@
             </div>
           </figure>
         </article>
-        <form action="" id="center-section__submit-form">
+        <form action="" id="center-section__submit-form" autocomplete="off">
           <input type="text" name="Your Answer Here" id="submit-form__answer-input">
           <button type="submit" id="submit-form__submit-btn">Submit</button>
         </form>
@@ -88,8 +88,10 @@
         </form>
       </section>
       <section class="main__right-section">
-        <button id="right-section__change-round-btn">Click Here to Start a New Round</button>
+        <button class='game-btns' id="right-section__change-round-btn">Click Here to Start a New Round</button>
       </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+    <script src="backend.js" charset="utf-8"></script>
     </body>
 </html>

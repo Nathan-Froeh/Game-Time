@@ -3,11 +3,9 @@ import $ from 'jquery';
 import '../src/sass/_variables.scss'
 import '../src/sass/_mixins.scss'
 import '../src/sass/base.scss'
-import DomUpdates from './DomUpdates'
+import DomUpdates from './DomUpdates';
 
 import Game from '../src/Game.js';
-import SurveyRepo from './SurveyRepo';
-import Round from './Round'
 
 let game, round, survey, turn;
 
@@ -26,6 +24,7 @@ $('#start__game__btn').on('click', () => {
   $('.splash__page').fadeOut()
   game = new Game($('#player__1').val(), $('#player__2').val())
   DomUpdates.hideTimer(1)
+  DomUpdates.changeBackground()
   fetchData()
 })
 
@@ -34,7 +33,7 @@ $('.answer-card').on('click', function() {
 })
 
 $('#submit-form__submit-btn').on('click', function() {
-  DomUpdates.checkCardFlip()
+  game.round < 3 ? DomUpdates.checkCardFlip() : null;
   if (game.round > 2) {
     fastMoneyTurn()
   } else {
@@ -51,6 +50,14 @@ $('#right-section__change-round-btn').on('click', function() {
 
 $('#left-section__quit-btn').on('click', function() {
   location.reload()
+})
+
+$('#left-section__restart-btn').on('click', function() {
+  game = new Game($('#player__1').val(), $('#player__2').val())
+  DomUpdates.hideTimer(1)
+  fetchData()
+  DomUpdates.removeFlipClass()
+  DomUpdates.resetScoreBox()
 })
 
 $('#score-section__timer').on('DOMSubtreeModified', function() {

@@ -4,14 +4,13 @@ class Turn {
     this.round = round;
     this.second = 30;
     this.counter;
-    this.currentGuess;
   }
 
   updateTimer() {
-    this.counter = setInterval(() => this.addSecond(), 1000)
+    this.counter = setInterval(() => this.subtractSecond(), 1000)
   }
 
-  addSecond() {
+  subtractSecond() {
     this.second--
   }
 
@@ -29,12 +28,6 @@ class Turn {
     return this.round.answers.find(item => {
       return item.toUpperCase() === guess.toUpperCase()
     })
-  }
-
-  updateAnswers() {
-    if (this.currentGuess !== undefined) {
-      this.round.removeAnswer(this.currentGuess)
-    }
   }
 }
 

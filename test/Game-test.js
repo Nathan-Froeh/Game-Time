@@ -23,8 +23,8 @@ describe('Game', function() {
   });
 
   it('should be instantiated with player1 and player2', () => {
-    expect(game.player1).to.deep.equal({ id: 1, name: 'Nathan', score: 0, scores: [] })
-    expect(game.player2).to.deep.equal({ id: 2, name: 'Ryan', score: 0, scores: [] })
+    expect(game.player1).to.deep.equal({ id: 1, name: 'Nathan', score: 0, scores: [], multiplier: 1 })
+    expect(game.player2).to.deep.equal({ id: 2, name: 'Ryan', score: 0, scores: [], multiplier: 1 })
   })
 
   it('should instantiate survey repo', () => {

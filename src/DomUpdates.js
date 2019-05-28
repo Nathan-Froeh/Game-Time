@@ -1,7 +1,9 @@
 import $ from 'jquery'
+import anime from 'animejs'
 
 var correctBuzzer = document.createElement('audio');
-correctBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-clang.wav');
+correctBuzzer.setAttribute('src',
+  'http://www.qwizx.com/gssfx/usa/ff-clang.wav');
 
 var wrongBuzzer = document.createElement('audio');
 wrongBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-strike.wav');
@@ -96,6 +98,7 @@ const DomUpdates = {
     $('#timer-2').text(turn.second)
   },
 
+
   displayMultiplier() {
     $('#center-section__multiplier-form').removeClass('slideUp')
   },
@@ -113,7 +116,21 @@ const DomUpdates = {
         turn.player.multiplier = $(this).text()
       }
     })
-  }
+  },
+
+  resetScoreBox() {
+    $('#score-box__player-1-score').text('0')
+    $('#score-box__player-2-score').text('0')
+  },
+
+  changeBackground() {
+    anime({
+      targets: 'h1',
+      rotate: '720',
+      scale: '2',
+      duration: '6000'
+    })
+  } 
 
 }
 
