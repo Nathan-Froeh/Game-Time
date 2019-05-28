@@ -6,8 +6,6 @@ import '../src/sass/base.scss'
 import DomUpdates from './DomUpdates'
 
 import Game from '../src/Game.js';
-import SurveyRepo from './SurveyRepo';
-import Round from './Round'
 
 let game, round, survey, turn;
 
@@ -26,6 +24,7 @@ $('#start__game__btn').on('click', () => {
   $('.splash__page').fadeOut()
   game = new Game($('#player__1').val(), $('#player__2').val())
   DomUpdates.hideTimer(1)
+  DomUpdates.changeBackground()
   fetchData()
 })
 
