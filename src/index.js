@@ -24,6 +24,7 @@ $('#start__game__btn').on('click', () => {
   $('.splash__page').fadeOut()
   game = new Game($('#player__1').val(), $('#player__2').val())
   DomUpdates.hideTimer(1)
+  DomUpdates.changeBackground()
   fetchData()
 })
 

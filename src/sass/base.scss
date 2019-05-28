@@ -49,7 +49,7 @@ h1 {
   @include display-flex(flex, null, center, null);
   @include dimension(null, 80%);
   position: relative;
-  background: linear-gradient(0deg, #000, #272727);
+  background: linear-gradient(0deg, #004777, #C9A566);
   color: $text-color;
   flex-direction: column;
 }
@@ -161,6 +161,10 @@ main {
   @include dimension(null, 80%);
   @include display-flex(flex, center, flex-end, null);
   margin-top: 10px;
+}
+
+.game-btns {
+  background: linear-gradient(0deg, #C9A566, #8B7AB0);
 }
 
 /*------------ScoreBoard----------*/
