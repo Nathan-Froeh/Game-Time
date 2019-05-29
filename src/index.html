@@ -8,7 +8,7 @@
       <div class = "splash__page">
         <dialog class = "splash__box">
           <h1>Family Feud</h1>
-          <form action="" class = "start__game__form">
+          <form action="" autocomplete="off" class = "start__game__form">
             <div class = "Player__1__box name__input__box">
               <label for="player__1">Enter Player 1</label>
               <input type="text" id = "player__1" class = "name__input">
@@ -21,6 +21,24 @@
           </form>
         </dialog>
       </div>
+      <div class = "splash__results__page push-to-back">
+       <dialog class = "splash__results_box">
+        <h1>Family Feud</h1>
+        <div class = "player__1__results_box">
+          <h2 id="player__1__results_display">Player 1 Score</h2>
+        </div>
+        <div class = "player__2__results_box">
+          <h2 id="player__2__results_display">Player 2 Score</h2>
+        </div>
+        <div class = "splash__results_winner">
+          <h2 id = "winner_display">Winner!</h2>
+        </div>
+        <section class="main__left-section">
+          <button id="left-section__restart-btn">Restart Game</button>
+          <button id="left-section__quit-btn">Quit Game</button>
+        </section>
+      </dialog>
+    </div>
       <section class="header__score-section">
         <div id="score-section__timer" class = "score-section__timer hidden">
           <p id="timer" class = "timer-1">30</p>
@@ -74,7 +92,7 @@
             </div>
           </figure>
         </article>
-        <form action="" id="center-section__submit-form" autocomplete="off">
+        <form action="" autocomplete="off" id="center-section__submit-form">
           <input type="text" name="Your Answer Here" id="submit-form__answer-input">
           <button type="submit" id="submit-form__submit-btn">Submit</button>
         </form>
@@ -88,10 +106,11 @@
         </form>
       </section>
       <section class="main__right-section">
-        <button class='game-btns' id="right-section__change-round-btn">Click Here to Start a New Round</button>
+        <button class='game-btns' id="right-section__change-round-btn">Next Round</button>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
     <script src="backend.js" charset="utf-8"></script>
+    </main>
     </body>
 </html>

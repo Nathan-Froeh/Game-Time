@@ -8,6 +8,7 @@ correctBuzzer.setAttribute('src',
 var wrongBuzzer = document.createElement('audio');
 wrongBuzzer.setAttribute('src', 'http://www.qwizx.com/gssfx/usa/ff-strike.wav');
 
+
 const DomUpdates = {
   removeFlipClass() {
     $('#answer__one').parent().parent().removeClass('flipped')
@@ -98,9 +99,8 @@ const DomUpdates = {
     $('#timer-2').text(turn.second)
   },
 
-
   displayMultiplier() {
-    $('#center-section__multiplier-form').removeClass('slideUp')
+    $('#center-section__multiplier-form').addClass('slideDown')
   },
 
   activateMultiplierButton() {
@@ -118,6 +118,12 @@ const DomUpdates = {
     })
   },
 
+  hideMuliplier() {
+    $('#center-section__multiplier-form').on('click', function() {
+      $(this).removeClass('slideDown')
+    })
+  },
+
   resetScoreBox() {
     $('#score-box__player-1-score').text('0')
     $('#score-box__player-2-score').text('0')
@@ -130,8 +136,27 @@ const DomUpdates = {
       scale: '2',
       duration: '6000'
     })
-  } 
+  },
+
+  findWinner(player1score, player2score, player1name, player2name) {
+    $('#winner_display').append('<h2><span id=\"winner__results_placeholder\"></span></h2>')
+    if(player1score > player2score) {
+      $('#winner__results_placeholder').text(player1name)
+    } else {
+      $('#winner__results_placeholder').text(player2name)
+    }
+  },
+
+  displayResults(player1score, player2score) {
+    $('#player__1__results_display').append('<h2><span id=\"player__1__results_placeholder\"></span></h2>')
+    $('#player__2__results_display').append('<h2><span id=\"player__2__results_placeholder\"></span></h2>')
+    $('#player__1__results_placeholder').text(player1score)
+    $('#player__2__results_placeholder').text(player2score)
+    $('.splash__results__page').removeClass('push-to-back')
+  }
 
 }
+
+
 
 export default DomUpdates;
