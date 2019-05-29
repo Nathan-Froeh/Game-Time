@@ -19,9 +19,8 @@ We all remember the quirky TV show, that puts two families head to head in a tri
 - WebPack
 
 ## The Game In Action!
-![2019-05-28 21 37 57](https://user-images.githubusercontent.com/47507801/58528609-720b5900-8194-11e9-9ad3-98607246fc0a.gif)
-![2019-05-28 21 42 15](https://user-images.githubusercontent.com/47507801/58528615-7899d080-8194-11e9-9623-9f6cfd522932.gif)
-<img width="1425" alt="Screen Shot 2019-05-28 at 10 00 31 PM" src="https://user-images.githubusercontent.com/47507801/58528625-88191980-8194-11e9-9c14-58f961958b0b.png">
+![FamilyFeudGiphy](https://user-images.githubusercontent.com/47507801/58556987-883c0800-81da-11e9-9f49-2574f7c1eead.gif)
+
 
 
 ## Enjoy!
