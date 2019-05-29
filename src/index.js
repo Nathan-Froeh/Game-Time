@@ -49,6 +49,12 @@ $('#right-section__change-round-btn').on('click', function() {
 })
 
 $('#left-section__quit-btn').on('click', function() {
+  console.log('yes')
+  location.reload()
+})
+
+$('#winner_display__quit-btn').on('click', function() {
+  console.log('yes')
   location.reload()
 })
 
