@@ -2,11 +2,11 @@ import Round from './Round';
 
 class FastMoney extends Round {
 
-	constructor(survey, game) {
-		super(survey, game)
-		this.player1Guesses = [];
-		this.player2Guesses = [];
-	}
+  constructor(survey, game) {
+    super(survey, game)
+    this.player1Guesses = [];
+    this.player2Guesses = [];
+  }
 
   evaluateGuesses(guess, turn) {
     this.answers.filter(answer => {

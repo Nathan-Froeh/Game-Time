@@ -92,6 +92,7 @@ const DomUpdates = {
   playerNames(name1, name2) {
     $('#score-box__player-1').text(name1)
     $('#score-box__player-2').text(name2)
+    $('.p1__box').addClass('current-player')
   },
 
   displayTimer(turn) {
@@ -109,10 +110,9 @@ const DomUpdates = {
     })
   },
 
-
   assignMultiplier() {
     $('#center-section__multiplier-form').on('click', function() {
-      if($(this).hasClass('active')) {
+      if ($(this).hasClass('active')) {
         turn.player.multiplier = $(this).text()
       }
     })
@@ -152,7 +152,12 @@ const DomUpdates = {
     $('#player__2__results_display').append('<h2><span id=\"player__2__results_placeholder\"></span></h2>')
     $('#player__1__results_placeholder').text(player1score)
     $('#player__2__results_placeholder').text(player2score)
-    $('.splash__results__page').removeClass('push-to-back')
+    $('.splash__results__page').removeClass('hidden')
+    $('#score-section__timer').remove()
+  },
+
+  removeResultsPage() {
+    $('.splash__results__page').addClass('hidden')
   }
 
 }
