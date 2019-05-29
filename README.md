@@ -22,6 +22,8 @@ We all remember the quirky TV show, that puts two families head to head in a tri
 ![FamilyFeudGiphy](https://user-images.githubusercontent.com/47507801/58556987-883c0800-81da-11e9-9f49-2574f7c1eead.gif)
 
 ## Collaborators:
-
+Nathan Froehlich [GitHub](https://github.com/Nathan-Froeh)<br>
+Ryan Flachman [GitHub](https://github.com/flachman03)<br>
+Taylor Jordan [GitHub](https://github.com/TaylorNoelJordan)<br>
 
 ## Enjoy!
