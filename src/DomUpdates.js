@@ -35,7 +35,7 @@ const DomUpdates = {
   },
 
   wrongAnswer() {
-    $('h1').prepend("<div id=\"red-x\">X</div>")
+    $('.main__center-section').prepend("<div id=\"red-x\">X</div>")
     setTimeout(this.removeX, 2000);
     wrongBuzzer.play();
   },
